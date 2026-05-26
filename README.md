@@ -139,6 +139,22 @@ Los resultados del ICFES Saber 11 están fragmentados por semestre. No existe un
 
 ---
 
+## Consideraciones
+
+**Ver detalles de un dataset:** Para acceder a la página con la información y ficha técnica de un dataset, simplemente elimínale la extensión `.json` a la URL. Por ejemplo: `https://www.datos.gov.co/resource/jbjy-vk9h.json` se convierte en `https://www.datos.gov.co/resource/jbjy-vk9h`.
+
+**Cómo encontrar IDs reales:** El dataset `bbf6-qe46` es el índice oficial de datos estratégicos publicado por MinTIC. Tiene columnas `tematica`, `nombre_base`, `entidad` y `enlace`. El ID siempre es la última parte de la URL (ej: en `https://www.datos.gov.co/d/4rxi-8m8d` el ID es `4rxi-8m8d`). Alternativamente, buscar en Google con `site:datos.gov.co "nombre del dataset"`.
+
+**Formatos de respuesta:** Cambiar `.json` por `.csv` o `.geojson` en el endpoint para obtener otros formatos. Ejemplo: `https://www.datos.gov.co/resource/72nf-y4v3.csv`.
+
+**Límite por defecto:** Sin `$limit`, la API devuelve solo 1000 filas. Siempre especificar `$limit`. Para datasets grandes, paginar con `$limit` + `$offset`.
+
+**SoQL (Socrata Query Language):** Soporta `$select`, `$where`, `$order`, `$group`, `$limit`, `$offset`, `$q` (búsqueda full-text). Sintaxis similar a SQL. Documentación completa: https://dev.socrata.com/docs/queries/
+
+**Datasets que ya no existen:** Algunos IDs históricos devuelven `{"code":"dataset.missing"}`. Esto pasa cuando la entidad elimina o migra el dataset. No hay forma de prevenirlo, verificar antes de construir sobre un dataset.
+
+---
+
 ## Cómo consumir la API
 
 ### JavaScript (fetch)
@@ -204,20 +220,6 @@ curl -H "X-App-Token: TU_APP_TOKEN" \
 ```
 
 ---
-
-## Consideraciones
-
-**Ver detalles de un dataset:** Para acceder a la página con la información y ficha técnica de un dataset, simplemente elimínale la extensión `.json` a la URL. Por ejemplo: `https://www.datos.gov.co/resource/jbjy-vk9h.json` se convierte en `https://www.datos.gov.co/resource/jbjy-vk9h`.
-
-**Cómo encontrar IDs reales:** El dataset `bbf6-qe46` es el índice oficial de datos estratégicos publicado por MinTIC. Tiene columnas `tematica`, `nombre_base`, `entidad` y `enlace`. El ID siempre es la última parte de la URL (ej: en `https://www.datos.gov.co/d/4rxi-8m8d` el ID es `4rxi-8m8d`). Alternativamente, buscar en Google con `site:datos.gov.co "nombre del dataset"`.
-
-**Formatos de respuesta:** Cambiar `.json` por `.csv` o `.geojson` en el endpoint para obtener otros formatos. Ejemplo: `https://www.datos.gov.co/resource/72nf-y4v3.csv`.
-
-**Límite por defecto:** Sin `$limit`, la API devuelve solo 1000 filas. Siempre especificar `$limit`. Para datasets grandes, paginar con `$limit` + `$offset`.
-
-**SoQL (Socrata Query Language):** Soporta `$select`, `$where`, `$order`, `$group`, `$limit`, `$offset`, `$q` (búsqueda full-text). Sintaxis similar a SQL. Documentación completa: https://dev.socrata.com/docs/queries/
-
-**Datasets que ya no existen:** Algunos IDs históricos devuelven `{"code":"dataset.missing"}`. Esto pasa cuando la entidad elimina o migra el dataset. No hay forma de prevenirlo, verificar antes de construir sobre un dataset.
 
 **Fuentes complementarias fuera de datos.gov.co:**
 - DANE Microdatos (censos y encuestas): https://microdatos.dane.gov.co
