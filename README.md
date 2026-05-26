@@ -6,11 +6,11 @@ Patrón de consulta: `https://www.datos.gov.co/resource/{ID}.json`
 
 **Resumen:** Un catálogo curado de las APIs y conjuntos de datos públicos de Colombia, organizados para facilitar su consumo y análisis.
 
-La API se puede usar sin token para probar cualquier dataset público directamente desde el navegador o con curl. Para acceder a set de datos privados o que requieran mayor cantidad de consultas (no hay rate limit documentado), se recomienda tener un token.
+La API se puede usar **sin token** para probar cualquier dataset público directamente desde el navegador o con curl. Para acceder a set de datos privados o que requieran mayor cantidad de consultas (no hay rate limit documentado), se recomienda tener un token.
 
 App Token (opcional): registrarse en https://www.datos.gov.co/login, ir al perfil de developer y generar un App Token. Se envía como header `X-App-Token` o como parámetro `$$app_token` en la URL.
 
-Esta es una selección de los datasets más destacados. Puedes consultar el catálogo completo directamente en el portal.
+Esta es una **selección de los datasets más destacados**. Puedes consultar el catálogo completo directamente en el portal.
 
 ---
 
