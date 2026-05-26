@@ -222,6 +222,5 @@ curl -H "X-App-Token: TU_APP_TOKEN" \
 **Fuentes complementarias fuera de datos.gov.co:**
 - DANE Microdatos (censos y encuestas): https://microdatos.dane.gov.co
 - DANE SIPSA (precios alimentos, Web Service SOAP): http://appweb.dane.gov.co/sipsaWS/SrvSipsaUpraBeanService?wsdl
-- ICFES Saber 11 histórico completo: https://icfes.gov.co/acceso-a-bases-de-datos
 - Banco de la República (tasas, inflación): https://www.banrep.gov.co/es/estadisticas
 - AGRONET (producción agrícola): https://www.agronet.gov.co
